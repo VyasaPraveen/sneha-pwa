@@ -1,0 +1,38 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    
+    // Allow read/write to all collections (no auth for now)
+    // You can add authentication later if needed
+    
+    // Masters collection
+    match /masters/{type}/{docId} {
+      allow read, write: if true;
+    }
+    
+    // Labels collection (print log)
+    match /labels/{labelId} {
+      allow read, write: if true;
+    }
+    
+    // Sequences collection (roll numbers)
+    match /sequences/{seqId} {
+      allow read, write: if true;
+    }
+    
+    // Settings collection
+    match /settings/{settingId} {
+      allow read, write: if true;
+    }
+    
+    // Layouts collection
+    match /layouts/{layoutId} {
+      allow read, write: if true;
+    }
+    
+    // Error logs collection
+    match /errorLogs/{logId} {
+      allow read, write: if true;
+    }
+  }
+}
