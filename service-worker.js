@@ -1,5 +1,5 @@
-// Sneha Label Printer - Service Worker v29.0 (Multi-Device Sync & Edit/Delete Fix)
-const CACHE_NAME = 'sneha-label-printer-v29.0';
+// Sneha Label Printer - Service Worker v29.2 (Duplicate Guard, Cloud Layout, Mobile View)
+const CACHE_NAME = 'sneha-label-printer-v29.2';
 const urlsToCache = [
   './',
   './index.html',
@@ -19,7 +19,7 @@ self.addEventListener('install', event => {
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => {
-        console.log('Sneha Label Printer: Cache v29.0 opened');
+        console.log('Sneha Label Printer: Cache v29.2 opened');
         return cache.addAll(urlsToCache);
       })
       .then(() => self.skipWaiting())
